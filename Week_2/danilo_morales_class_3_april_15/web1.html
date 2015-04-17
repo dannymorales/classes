@@ -20,7 +20,7 @@
 		margin: 10px;
 	}
 	.body{
-		transition: background-color 2s ease;
+		transition: background-color .5s ease;
 	}
 </style>
 <body class="body" onload="startTime()">
@@ -40,6 +40,8 @@
 		
 		<input id="input1" type="text">
 	</div>
+
+	<button id="timebutton" id="check">click</button>
 	<script type="text/javascript">
 
 	function startTime() {
@@ -50,7 +52,7 @@
 	    m = checkTime(m);
 	    s = checkTime(s);
 	    document.getElementById('clock').innerHTML = h+":"+m+":"+s;
-	    document.getElementById('input1').value = s;
+
 	    var t = setTimeout(function(){startTime()},500);
 	    return false;
 	}
@@ -61,23 +63,23 @@ function checkTime(i) {
 
 }
 
+$(function  mytime() {
+	var d = new Date();
+	var sec = d.getSeconds();
 
 
-var _index = 0, colors = ["#0e76bd", "#aa43a0" ,"#5ad1e3"];
-var counter = $("#min").val(50);
+	if (sec%2 == 0) {
+		$("body").css("background-color", "black");
+		$("#clock").css("color", "white");
+	} else{
+		$("body").css("background-color", "white");
+		$("#clock").css("color", "black");
+	};
 
-
-setInterval(changeColor, 2000);
-
-function changeColor() {
-    $('.body').css({ 
-    	'background-color': colors[_index]
-
-    });
-  
-    _index = (_index < colors.length-1) ? _index+1 : 0;
-
-}
+	var tt = setTimeout(function(){mytime()},10000)
+	return false;
+	
+})
 
 
 
