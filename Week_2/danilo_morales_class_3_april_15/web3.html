@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vowels</title>
+</head>
+<style>
+	
+	body{
+
+		background: #f5f5f5;
+		margin: 25px;
+		padding: 25px;
+
+	}
+	input{
+		padding: 25px;
+		width: 200px;
+		border: 1px solid;
+		height: 20px;
+		margin: 20px;
+		font-size: 20px;
+		display: inline-block;
+		float: left;
+	}
+	label{
+		font-size: 20px;
+		display: inline;
+	    float: left;
+	    clear: left;
+	    width: 300px;
+	    text-align: right;
+
+	}
+	button{
+		width: 200px;
+		height: 50px;
+		margin: 60px;
+		clear: both;
+		float: none;
+		
+	}
+</style>
+<body>
+	<h2>Check Vowels</h2>
+<form action="/">
+	<label for="text1">Enter word here</label>
+	<input type="text" id="text1" onblur="findVowels()" name="text1"><br>
+	<label for="text2">Vowels on the cell</label>
+	<input type="text" readonly="true" id="text2" name="text2"><br>
+	<label for="text3">Vowels Counted</label>
+	<input type="text" readonly="true" id="text3" name="text3"><br>
+	<button type="button" id="btn" onclick="findVowels()">SUBMIT</button>
+</form>
+	
+	<script type="text/javascript">
+	
+function findVowels() {
+
+	var str=document.getElementById('text1').value;  
+
+   	var vowelC = 0;
+	var total_findVowels="";
+     
+     for (var i = 0; i < str.length; i++) {
+
+     if (str.charAt(i).match(/[a-zA-Z]/) != null) {
+
+        // findVowels
+
+        if (str.charAt(i).match(/[aeiouAEIOU]/))
+  {
+
+ total_findVowels=total_findVowels+str.charAt(i);            
+ vowelC++;
+
+        }
+
+     }
+   }
+    document.getElementById('text2').value=total_findVowels;
+ document.getElementById('text3').value=vowelC;
+   alert("Total Number of findVowels: " + vowelC);
+ 
+   document.getElementById('text2').focus;
+}
+
+	</script>
+</body>
+</html>

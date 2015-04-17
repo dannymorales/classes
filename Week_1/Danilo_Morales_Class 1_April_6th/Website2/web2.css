@@ -1,0 +1,89 @@
+body{
+	width: 65%;
+
+	
+}
+h2{
+	color: #788189;
+	text-align: center;
+	margin: 30px;
+}
+
+.blocks{
+	width: 100%;
+	padding: 0 35%;
+	margin: 30px auto;
+
+}
+.block1, .block2, .block3, .block4, .block5, .block6{
+	float: left;
+	border: 1px;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+	margin: 2px;
+	padding: 2px;
+	width: 200px;
+	height: 200px;
+	text-align: center;
+	font-size: 20px;
+}
+
+.div-txt {
+	text-align: center;
+	margin: 100px 0px;
+}
+
+.block1, .block3, .block5{
+	background-color: #C8D7E5;
+	transition: .5s;
+	color: #788189
+}
+.block2, .block4, .block6{
+	background-color: #788189;
+	transition: .5s;
+	color: #C8D7E5;
+}
+.block1{
+	border-radius: 10px 0 0 0;
+}
+
+.block3{
+	border-radius: 0 10px 0 0;
+}
+.block4{
+	border-radius: 0 0 0 10px;
+}
+.block6{
+	border-radius: 0 0 10px 0;
+}
+h2{
+	text-align: center;
+}
+
+.block1:hover{
+	background-color: white;
+	color: black;
+}
+.block2:hover{
+	background-color: white;
+	color: black;
+}
+.block3:hover{
+	background-color: white;
+	color: black;
+}
+.block4:hover{
+	background-color: white;
+	color: black;
+}
+.block5:hover{
+	background-color: white;
+	color: black;
+}
+.block6:hover{
+	background-color: white;
+	color: black;
+}
+
+

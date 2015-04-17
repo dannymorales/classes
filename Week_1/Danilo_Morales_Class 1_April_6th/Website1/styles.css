@@ -1,0 +1,128 @@
+body{
+
+	background: #CCFFFF;
+	width: 70%;
+
+}
+.myh1{
+	text-align: center;
+}
+header{
+	border-radius: 5px;
+
+}
+.mynav{
+	background-color: white;
+	border-radius: 5px;
+	border: 1px solid;
+
+}
+.image1{
+	width: 95%;
+	border-radius: 7px;
+}
+.mynav li{
+	display: inline-block;
+	text-align: center;
+	list-style-type: none;
+	text-decoration: none;
+	margin: 2%;
+	padding: 10px;
+	border-radius: 5px;
+	-webkit-transition: .5s;
+}
+
+.mynav li:hover{
+	background-color: #CCFFFF;
+	color: white;
+
+}
+
+.row1{
+	width: 55%;
+	padding: 25px;
+	border-radius: 5px;
+	float: left;
+	margin: 2%;
+	overflow: none;
+}
+.article1, .article2, .article3{
+	background-color: white;
+	border-radius: 5px;
+	border: 1px solid black;
+	margin: 2%;
+	padding: 25px;
+	width: 100%;
+	overflow: none;
+}
+.sidebarnav li{
+	text-decoration: none;
+	list-style-type: none;
+	padding: 5px;
+}
+
+a{
+	text-decoration: none;
+}
+
+
+
+.row2{
+	border-radius: 5px;
+	float: left;
+	padding: 25px;
+	overflow: none;
+	width: 25%;
+
+}
+.col{
+	background-color: white;
+	padding: 25px;
+	width: 90%;
+	border-radius: 5%;
+	margin: 2%;
+	border: 1px solid black;
+}
+
+footer{
+	width: 95%;
+	float: left;
+	border-radius: 5px;
+	border: 1px, solid black;
+}
+.blogrow1{
+	width: 100%;
+	float: left;
+}
+.colblog{
+	background-color: white;
+	float: left;
+	width: 23%;
+	border:1px solid black;
+	border-radius: 5px;
+	padding: 25px;
+	margin: 2%;
+
+}
+
+
+@media screen and (max-width: 650px) {
+ 
+.mynav li{
+	list-style-type: none;
+	text-decoration: none;
+	margin: 2%;
+	padding: 10px;
+	border-radius: 5px;
+	-webkit-transition: .5s;
+}
+.blogrow1{
+	width: 100%;
+}
+.colblog{
+	width: 100%;
+	border:1px solid black;
+	border-radius: 5px;
+	padding: 25px;
+	margin: 2%;
+}

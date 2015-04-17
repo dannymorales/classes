@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Clock</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<style type="text/css">
+	body{
+		background: #fcf8ff;
+	}
+	#clock{
+
+		font-size: 80px;
+		text-align: center;
+
+	}
+	div{
+		padding: 25px;
+		margin: 10px;
+	}
+	.body{
+		transition: background-color 2s ease;
+	}
+</style>
+<body class="body" onload="startTime()">
+
+<div id="clock">
+</div>
+
+<form action="/" method="POST">
+	<label for="username">Username</label>
+		<input type="text" name="username" id="username" value="m"><br>
+		<label for="password">Password</label>
+		<input type="text" name="password" id="password"><br>
+		<button type="button" id="btn" name="submit" value="login" onclick="myFunction">Submit</button><br>
+</form>
+	</div>
+	<div id="min">
+		
+		<input id="input1" type="text">
+	</div>
+	<script type="text/javascript">
+
+	function startTime() {
+	    var today=new Date();
+	    var h=today.getHours();
+	    var m=today.getMinutes();
+	    var s=today.getSeconds();
+	    m = checkTime(m);
+	    s = checkTime(s);
+	    document.getElementById('clock').innerHTML = h+":"+m+":"+s;
+	    document.getElementById('input1').value = s;
+	    var t = setTimeout(function(){startTime()},500);
+	    return false;
+	}
+
+function checkTime(i) {
+    if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+
+}
+
+
+
+var _index = 0, colors = ["#0e76bd", "#aa43a0" ,"#5ad1e3"];
+var counter = $("#min").val(50);
+
+
+setInterval(changeColor, 2000);
+
+function changeColor() {
+    $('.body').css({ 
+    	'background-color': colors[_index]
+
+    });
+  
+    _index = (_index < colors.length-1) ? _index+1 : 0;
+
+}
+
+
+
+
+	</script>
+</body>
+</html>

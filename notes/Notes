@@ -1,0 +1,62 @@
+DAY 1
+
+=> To use internal links to any partof the content you should use (#etcetera) to access the ID content
+=><iframe src= "page.html"></iframe>
+=>When using a "a tag" and use => Target="_Etc" it will open a new windows.
+
+DAY 2
+
+TERMINAL CMDS
+$ rmdir => deletes dir. 
+$ touch => updates a file. If there is no file with that name, then it creates it. I must use the ".tag" to specify the type of file.
+$ rm -r => removes 
+$ cp => for copy == Example: $ cp index.html index2.html
+$ mv => to move to other folder == Example: $ mv index.html /Awesome/
+$ history - to see the history of what i have made. If I press the up and down arrow, i can browse through the commands.
+
+$ git config --global user.name
+
+$git init => to create a new repository
+$git add . 
+$git commit -m 'initial commit'
+$git status => to check status.
+$ git add "file name and tag"
+
+$git commit -a "add message here" === -a means "All"
+$git commit -m "add message here" === -m means "message"
+$git commit -am 'add another message'
+
+
+DAY 3
+
+vim:
+
+To start Vim Commands, type VIM in terminal:
+
+Press scape to access the comand then here are the commands=>>
+=>:q! to exit
+=>:wq! to save and exit
+=>:i to insert
+=>:o to insert too. Not sure about this one.
+
+To open a file, go to the file folder and type:
+Vim "filename.html"
+press scape to do some commands like: 
+=> : Set Ruler - to see where the line is
+=> :syntax on - to color the commands:
+=> : set laststatus=2
+=> :set number
+
+$ vim .vimrc to do all that to all document by default, otherwise it is raw everytime it opens. What I mean with this is that it is just black and white.
+
+Cap L and M moves the cursor.
+Shift {} to move up and down faster.
+
+if you go, let's say, to a text inside parenthesis, you type c - i and "" selects all and you could type.
+Capital Q to insert tag at the beginning and Capital A to go to the end of the line.
+the dot (.) repeats the previous entry.
+
+=> press q to record macro all keys when pressed.
+
+=>Capital V to select all.
+

@@ -1,0 +1,60 @@
+body{
+	
+	margin: 20px auto;
+
+}
+
+h2{
+	color: #003D00;
+	font-family: georgia;
+	text-align: center;
+}
+a{
+	text-decoration: none;
+	transition:.5s;
+}
+a:hover{
+	border-bottom: 2px solid black;
+}
+
+article{
+	border: 1px solid black;
+	border-radius: 10px;
+	width: 700px;
+	margin: 0 0 0 250px;
+	padding: 30px;
+	overflow: none;
+}
+article h3{
+	font-family: georgia;
+	text-align: center;
+}
+article p{
+	background-color: white;
+	width: 93%;
+	padding: 25px;
+	border-radius: 10px;
+	overflow: none;
+	line-height: 19px;
+	overflow: none;
+
+}
+article footer{
+	padding: 5px;
+	text-align: right;
+}
+ul{
+	margin: 0 0 0 250px;
+}
+.img1{
+	width: 200px;
+	float: left;
+	overflow: none;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 2px;
+}
+
+.youmight{
+	text-transform: uppercase;
+}

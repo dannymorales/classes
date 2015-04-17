@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Form Example</title>
+	
+	<style>
+		input{
+			padding: 5px;
+			margin: 10px;
+		}
+		.blog{
+			padding: 25px;
+			margin: 20px;
+		}
+		/*#results input{
+			color: #fff9fd;
+			background-color: #fff9fd;
+			border: 1px solid #fff9fd;
+
+		}*/
+		div{
+			padding: 25px;
+			background: #fff9fd;
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Sign in Below</h1>
+	<div>
+	<form action="/" method="POST">
+		<label for="date">Date:</label>
+		<input type="text" name="date" id="date"><br>
+		<label for="username">Username</label>
+		<input type="text" name="username" id="username"><br>
+		<label for="password">Password</label>
+		<input type="text" name="password" id="password"><br>
+		<button type="button" id="btn" name="submit" value="login">Submit</button><br>
+	</form>
+	</div>
+
+	<div id="results">
+		
+	</div>
+	<div id="blog">
+		<textarea id="blogtext" placeholder="enter text"></textarea>
+		<button type="button" id="bbtn">create blog</button>
+
+		<p id="bloging"></p>
+	</div>
+	
+	<h2 id="type"></h2>
+	<h2 id="type2"></h2>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script>
+	
+
+	$(function () {
+		
+		$("#password").keyup(function(){
+			if (isNaN($(this).val())){
+				$("#type2").html("Not a Number");
+			}
+			else{
+				$("#type2").html("This is a number");
+			}
+		});
+
+		$("#date").blur(function(){
+			var month = $("#date").val().split("/")[0];
+			var day = $("#date").val().split("/")[1];
+			var year = $("#date").val().split("/")[2];
+
+		if(isNaN(month) || month > 12 || day > 31 || year > 2016){
+			alert("Wrong Date Format");
+			$("#date").focus();
+		}
+		});
+		
+ 		$('#btn').click(function(){
+			if($("#date").val() == ""){
+				alert ("blank");
+			}
+			else if ($('#username').val() == ""){
+				alert('Your username is empty. Please enter your password');
+				$("#username").focus();
+			}
+			else if ($('#password').val() == ""){
+				alert('Your password is empty. Please enter your password');
+				$("#passord").focus();
+			}
+			else {
+			$('#results').html("Welcome" + " " + $('#username').val() + "<br>" + "Your password is: " + "" + $('#password').val() + "<br>" + "date is: " + " " + $('#date').val());
+			}
+		});
+		
+			$('#bbtn').click(function(){
+			confirm('You are about to create a blog. Continue ?')
+			$('#bloging').append($('#blogtext').val());
+			});
+		});
+		
+
+		$( "body" ).click(function( event ) {
+  		$( "#type" ).html( "clicked: " + event.target.nodeName );
+		});
+	
+	</script>
+</body>
+</html>

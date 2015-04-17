@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Form Example</title>
+	
+	<style>
+		input{
+			padding: 5px;
+			margin: 10px;
+		}
+		.blog{
+			padding: 25px;
+			margin: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Sign in Below</h1>
+	<form action="/" method="POST">
+		<label for="date">Date:</label>
+		<input type="text" name="date" id="date"><br>
+		<label for="username">Username</label>
+		<input type="text" name="username" id="username"><br>
+		<label for="password">Password</label>
+		<input type="text" name="password" id="password"><br>
+		<button type="button" id="btn" name="submit" value="login">Submit</button>
+	</form>
+
+	<div id="results">
+		<p id="datesplit"></p>
+	</div>
+
+	<div id="blog">
+		<textarea id="blogtext" placeholder="enter text"></textarea>
+		<button type="button" id="bbtn">create blog</button>
+	</div>
+	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script>
+	
+
+	
+	$(function () {
+			
+		$("#date").blur(function(){
+			$('#datesplit').append($("#date").val().split("/") + "");
+		});
+		$('#btn').click(function(){
+			if ($('#username').val() == ""){
+				alert('Your username is empty. Please enter your password');
+			}
+			else if ($('#password').val() == ""){
+				alert('Your password is empty. Please enter your password');
+			}
+
+			else {
+			$('#results').html("Welcome" + " " + $('#username').val() + "<br>" + "Your password is: " + "" + $('#password').val() + "<br>" + "date" + " " + $('#date'));
+			}
+
+		});
+		
+
+		// $('#bbtn').click(function(){
+		// 	confirm('You are about to create a blog. Continue ?')
+		// 		$('#bloging').append($('#blogtext').val());
+			
+		// });
+	
+
+	});
+	</script>
+</body>
+</html>

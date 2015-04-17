@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My first Jquery</title>
+	<script language="javascript" type="text/javascript" src="jquery-1.11.2.min.js"></script>
+	<style type="text/css">
+	
+	body{
+		margin: 50px 250px;
+		width: 800px;
+		background: #f1f0f2;
+	}
+	.block1, .block2, .block3, .block4{
+		float: left;
+		width: 150px;
+		height: 150px;
+		padding: 10%;
+		margin: 10px;
+		background: #c9c9c9;
+		position: relative;
+		animation-name: example;
+    animation-duration: 4s;
+	}
+
+	@-webkit-keyframes example {
+    from {background-color: #c9c9c9;}
+    to {background-color: red;}
+}
+
+	</style>
+
+</head>
+<body>
+
+<div class="block1">
+	<h2>BLOCK 1</h2>
+</div>
+<div class="block2">
+	<h2>BLOCK 2</h2>
+</div>
+<div class="block3">
+	<h2>BLOCK 3</h2>
+</div>
+<div class="block4">
+	<h2>BLOCK 4</h2>
+</div>
+
+	<script>
+	
+	
+$(function(){
+
+	// MOUSE ENTER
+
+	$(".block1").mouseenter(function(){
+
+		$(".block2").animate({
+        opacity: '0.3',
+        left: '1000px',
+        bottom: '500px',
+        
+    }, 1000);
+
+	$(".block3").animate({
+        left: '-800px',
+        opacity: '0.3',
+        top: '800px',
+    }, 500);
+
+	$(".block4").animate({
+        left: '800px',
+        opacity: '0.3',
+        top: '1000px',
+    }, 500);
+
+    $(".block1").stop().delay(300).animate({
+			left: '100px',
+			top: '50px',
+			width: '400',
+			height: '400',
+		}, 1000);
+
+		var origin = $('.block1');
+		origin.animate({fontSize: '30px'});
+		origin.css("background-color", "#bae3f6");
+    });
+	
+	$( ".block1" ).mouseleave(function(){
+  	$(".block1" ).stop().animate(
+  	{ left: '0px',
+  		top: '0px',
+  		width: "150",
+  		height: "150",
+   	}, 500 );
+
+   	var origin = $('.block1');
+		origin.animate({fontSize: '14px'});
+		origin.css("background-color", "#c9c9c9");
+	});
+
+  	$(".block2").delay(200).animate({
+        left: '0px',
+        bottom: '0px',
+        opacity: '1', 
+
+    }, 500);
+  	$(".block3").delay(200).animate({
+        left: '0px',
+        top: '0px',
+        opacity: 1, 
+
+    }, 500);
+  	$(".block4").delay(200).animate({
+        left: '0px',
+        top: '0px',
+        opacity: 1, 
+
+    }, 500);
+
+  	
+
+});
+
+	</script>
+</body>
+</html>
