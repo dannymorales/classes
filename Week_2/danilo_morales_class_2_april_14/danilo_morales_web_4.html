@@ -3,24 +3,54 @@
 <head>
 	<title>My first Scope</title>
 
+	<style type="text/css">
+		body{
 
+			background: #f4f6eb;
+			font-family: courier;
+			text-align: center;
+			width: 400px;
+			margin: 100px 400px;
+		}
+		div{
+			background: #fafbf7;
+			border-radius: 5px;
+		}
+	</style>
 </head>
+
 <body>
-	<h1>scope</h1>
-	<h2 id="h2"></h2>
+	<div>
+	<h1>Global scope</h1>
+	<h2 id="global"></h2>
 
+	</div>
+	<div>
+		<h1>Local Scope</h1>
+		<h2 id="local"></h2>
+	</div>
 	<script>
-
-myFunction();	
-document.getElementById("h2").innerHTML =
-"My name is " + name;
-
-function myFunction() {
-   name = "Danilo";
 	
-}
+	
+			
+			var x = "Danilo Morales";
+			myFunction();
+
+			function myFunction () {
+				document.getElementById('global').innerHTML = "My Name is " + x;
+			}
+
+			var y = "Danilo Morales"
+			myFunction2();
+
+			function myFunction2 (y) {
+				y = "Danilo"
+				document.getElementById('local').innerHTML = "My Name is " + y;
+			}
 
 
+		
+		
 
 	</script>
 </body>

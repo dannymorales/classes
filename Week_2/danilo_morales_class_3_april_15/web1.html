@@ -11,8 +11,10 @@
 	}
 	#clock{
 
-		font-size: 80px;
+		font-size: 250px;
 		text-align: center;
+		margin: 200px;
+
 
 	}
 	div{
@@ -22,26 +24,24 @@
 	.body{
 		transition: background-color .5s ease;
 	}
+	color{
+
+		transition: .5s ease;
+	}
 </style>
 <body class="body" onload="startTime()">
 
 <div id="clock">
 </div>
 
-<form action="/" method="POST">
+<!-- <form action="/" method="POST">
 	<label for="username">Username</label>
 		<input type="text" name="username" id="username" value="m"><br>
 		<label for="password">Password</label>
 		<input type="text" name="password" id="password"><br>
 		<button type="button" id="btn" name="submit" value="login" onclick="myFunction">Submit</button><br>
-</form>
-	</div>
-	<div id="min">
-		
-		<input id="input1" type="text">
-	</div>
-
-	<button id="timebutton" id="check">click</button>
+</form> -->
+	
 	<script type="text/javascript">
 
 	function startTime() {
@@ -54,7 +54,7 @@
 	    document.getElementById('clock').innerHTML = h+":"+m+":"+s;
 
 	    var t = setTimeout(function(){startTime()},500);
-	    return false;
+	    // return false;
 	}
 
 function checkTime(i) {
@@ -65,20 +65,19 @@ function checkTime(i) {
 
 $(function  mytime() {
 	var d = new Date();
-	var sec = d.getSeconds();
+	var sec = d.getMinutes();
 
 
-	if (sec%2 == 0) {
+	if (sec%2 == 0){
 		$("body").css("background-color", "black");
 		$("#clock").css("color", "white");
-	} else{
+	} else {
 		$("body").css("background-color", "white");
 		$("#clock").css("color", "black");
 	};
 
-	var tt = setTimeout(function(){mytime()},10000)
+	var tt = setTimeout(function(){mytime()}, 10000);
 	return false;
-	
 })
 
 
