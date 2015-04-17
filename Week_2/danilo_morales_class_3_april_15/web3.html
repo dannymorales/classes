@@ -17,7 +17,7 @@
 		padding: 25px;
 		width: 200px;
 		border: 1px solid;
-		height: 20px;
+		height: 8px;
 		margin: 20px;
 		font-size: 20px;
 		display: inline-block;
@@ -40,9 +40,15 @@
 		float: none;
 		
 	}
+
 </style>
 <body>
-	<h2>Check Vowels</h2>
+	<h2>Day 7 Assignment</h2>
+
+		<ul>
+			<h2>Index</h2>
+			<li>Vowels</li>
+		</ul>
 <form action="/">
 	<label for="text1">Enter word here</label>
 	<input type="text" id="text1" onblur="findVowels()" name="text1"><br>
@@ -57,7 +63,7 @@
 	
 function findVowels() {
 
-	var str=document.getElementById('text1').value;  
+	var str = document.getElementById('text1').value;  
 
    	var vowelC = 0;
 	var total_findVowels="";
@@ -66,22 +72,18 @@ function findVowels() {
 
      if (str.charAt(i).match(/[a-zA-Z]/) != null) {
 
-        // findVowels
 
         if (str.charAt(i).match(/[aeiouAEIOU]/))
   {
 
- total_findVowels=total_findVowels+str.charAt(i);            
- vowelC++;
+ 	total_findVowels = total_findVowels+str.charAt(i); vowelC++;
 
         }
 
      }
    }
-    document.getElementById('text2').value=total_findVowels;
- document.getElementById('text3').value=vowelC;
-   alert("Total Number of findVowels: " + vowelC);
- 
+    document.getElementById('text2').value = total_findVowels;
+ document.getElementById('text3').value = vowelC;
    document.getElementById('text2').focus;
 }
 

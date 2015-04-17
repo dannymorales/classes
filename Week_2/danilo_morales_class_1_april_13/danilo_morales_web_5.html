@@ -23,12 +23,29 @@
 			padding: 25px;
 			background: #fff9fd;
 			margin: 10px;
+			border: 1px solid black;
+			border-radius: 10px;
 		}
 	</style>
 </head>
 <body>
-	<h1>Sign in Below</h1>
+	<h1>DAY 7 ASSIGNMENT</h1>
+	
+	<h2>Index</h2>
+		<ul>
+			<li>Validate Date format</li>
+			<li>Alert if one of the fields is empty</li>
+			<li>display part of the body touched</li>
+			<li>display type of key pressed inside "Password" field</li>
+			<li>Created a fake blog field to append a blog content. I also created a confirmation alert</li>
+		</ul>
+	
 	<div>
+		<h2 id="type"></h2>
+		<h2 id="type2"></h2>
+	</div>
+	<div>
+	<h3>Enter your information</h3>
 	<form action="/" method="POST">
 		<label for="date">Date:</label>
 		<input type="text" name="date" id="date"><br>
@@ -40,9 +57,6 @@
 	</form>
 	</div>
 
-	<div id="results">
-		
-	</div>
 	<div id="blog">
 		<textarea id="blogtext" placeholder="enter text"></textarea>
 		<button type="button" id="bbtn">create blog</button>
@@ -50,9 +64,6 @@
 		<p id="bloging"></p>
 	</div>
 	
-	<h2 id="type"></h2>
-	<h2 id="type2"></h2>
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script>
 	
@@ -61,19 +72,23 @@
 		
 		$("#password").keypress(function (e) {
 			var code = e.keyCode || e.which;
-			if (code <= 57){
-				$("#type2").html("You typed a number");
+				
+			if (code === 13){
+			$("#type2").html("You pressed the ENTER key.");
+			}
+			else if (code <= 57 ){
+				$("#type2").html("You typed a number.");
 				// alert("number");
 			}
 			else if (code >= 97){
-				$("#type2").html("You typed a letter");
+				$("#type2").html("You typed a letter.");
 				// alert("letter");
 			}
 			else if (code <= 47){
-				$("#type2").html("You typed another key");
+				$("#type2").html("You typed another key.");
 			}
-			else if (code === 13){
-			$("#type2").html("You pressed the ENTER key");
+			if (code === 13){
+			$("#type2").html("You pressed the ENTER key.");
 			}
 		});
 
