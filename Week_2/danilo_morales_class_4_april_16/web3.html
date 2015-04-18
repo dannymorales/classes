@@ -3,6 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>User Name Form</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	
 </head>
 <style>
 	
@@ -77,7 +79,7 @@
 
 	    // // USERNAME VALIDATION//
 	    if (x == null || x == "" ) {
-	        alert("Name must be filled out");
+	        alert("Username is blank");
 	        return false;
 	    }
 
@@ -93,7 +95,7 @@
     		y.focus()
     	}	
     	if (y == x){
-    		alert("same as username");
+    		alert("Password cannot be the username");
     		return false;
     		y.focus();
 
@@ -107,7 +109,7 @@
     		alert("Password must have at least 1 number");
     		return false;
     		y.focus();
-    	}
+    	} 
     	
     	if(z == "" || y !== z ){
     		alert("passwords do not match. Please Re-enter");
