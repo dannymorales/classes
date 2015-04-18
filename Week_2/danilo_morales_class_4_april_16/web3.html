@@ -34,13 +34,16 @@
 
 
 	}
-	submit{
+	#btn{
 		width: 200px;
 		height: 50px;
 		margin: 60px;
 		clear: both;
 		float: none;
-		
+		transition: .5s;
+	}
+	#btn:hover{
+		background-color: #b8dbd3;
 	}
 
 </style>
@@ -57,55 +60,65 @@
 	<label for="Password1">Password</label>
 	<input type="text" id="pw1" name="pw1"><br>
 	<label for="Password2">Re-enter Password</label>
-	<input type="text" id="pw2" name="pw2"><br>
+	<input type="text" id="pw2" name="pw2" ><br>
 	
 	<button type="submit" id="btn">SUBMIT</button>
 </form>
 	
 	<script>
-	
+
+
 	function validateForm() {
-	    
-	    var x = document.forms["myForm"]["username"].value;
+
+
+		var x = document.forms["myForm"]["username"].value;
 	    var y = document.forms["myForm"]["pw1"].value;
 	    var z = document.forms["myForm"]["pw2"].value;
 
 	    // // USERNAME VALIDATION//
-	    // if (x == null || x == "" ) {
-	    //     alert("Name must be filled out");
-	    //     return false;
-	    // }
+	    if (x == null || x == "" ) {
+	        alert("Name must be filled out");
+	        return false;
+	    }
 
-    	// re =/^\w+$/;
-
-    	// if(!re.test(x)){
-    	// 	alert("character error");
-    	// 	return false
-    	// 	x.focus();
-    	// }
+    	if((/^\w+s/).test(x)){
+    		alert("character error");
+    		return false;
+    		x.focus();
+    	}
 
     	if (y == ""){
     		alert("password is blank");
-    		return false
+    		return false;
     		y.focus()
     	}	
-    	if (y.length < 6){
-    		alert("password must be at least 6 characters");
-    		return false
-    		y.focus();
-    	}
-    	
     	if (y == x){
     		alert("same as username");
+    		return false;
+    		y.focus();
+
+    		}
+    	if (y.length < 6){
+    		alert("password must be at least 6 characters");
+    		return false;
     		y.focus();
     	}
     	if(!(/[0-9]/).test(y)){
     		alert("Password must have at least 1 number");
-    		return false
+    		return false;
     		y.focus();
     	}
     	
+    	if(z == "" || y !== z ){
+    		alert("passwords do not match. Please Re-enter");
+    		return false
+    		z.focus();
+    		}
+
+ 
 	}
+
+	
 
 	</script>
 </body>
