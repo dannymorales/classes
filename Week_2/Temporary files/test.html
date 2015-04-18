@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Draggable - Default functionality</title>
+  <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  
+  <style>
+  #draggable { 
+
+
+    width: 150px; 
+    height: 150px; 
+    padding: 0.5em; 
+    border: 1px solid;
+    cursor: pointer;
+    background-color: #fccbd2;
+    -ms-text-overflow: ellipsis;
+    text-align: center;
+  }
+  .alert {
+    
+    background: #fccbd2;
+    border: 1px solid;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: center;
+      }
+  .alert .ui-widget-header{
+    background: red;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+
+  }
+  .alert .ui-dialog-titlebar-close {
+    float: right;
+  }
+
+  </style>
+
+</head>
+<body>
+ 
+<div id="draggable" class="ui-widget-content">
+  <p>Drag me around</p>
+</div>
+
+
+<div id="dialog" title="Error:">
+  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+</div>
+ 
+
+ <script>
+  
+  $(function() {
+    $( "#draggable" ).draggable();
+  });
+
+  $(function() {
+    $( "#dialog" ).dialog({
+
+      modal: false,
+      dialogClass: "alert",
+      closeText: "X",
+        });
+  });
+  </script>
+ 
+</body>
+</html>

@@ -3,14 +3,17 @@
 <head>
 	<meta charset="UTF-8">
 	<title>User Name Form</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+  	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
 	
 </head>
 <style>
 	
 	body{
 
-		background: #f5f5f5;
+		background: #cfd1d6;
 		margin: 25px;
 		padding: 25px;
 
@@ -48,8 +51,50 @@
 		background-color: #b8dbd3;
 	}
 
+#dialog{
+	display: none;
+}	
+#draggable { 
+
+
+    width: 150px; 
+    height: 150px; 
+    padding: 0.5em; 
+    border: 1px solid;
+    cursor: pointer;
+    background-color: #fccbd2;
+    -ms-text-overflow: ellipsis;
+    text-align: center;
+  }
+  .alert {
+  	background: #babcc0;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 10px;
+    text-align: center;
+    transition:1s;
+	width: 200px;
+	height: 100px;
+	padding: 5px;
+  }
+  .alert .ui-widget-header{
+    background: #cfd1d6;
+    border-radius: 10px;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+
+  }
+  .alert .ui-dialog-titlebar-close {
+    float: right;
+  }
+
+
 </style>
 <body>
+
+
+
 	<h2>Day 7 Assignment</h2>
 
 		<ul>
@@ -66,9 +111,31 @@
 	
 	<button type="submit" id="btn">SUBMIT</button>
 </form>
+
+<div id="draggable" class="ui-widget-content">
+  <p>Drag me around</p>
+</div>
+
+
+<div id="dialog" title="Error:">
+  <p>This is the default dialog.</p>
+</div>
 	
 	<script>
+		$(function() {
+    $( "#draggable" ).draggable();
+  });
 
+  // $(function() {
+  //   $( "#dialog" ).dialog({
+
+  //     modal: true,
+  //     dialogClass: "alert",
+  //     closeText: "X",
+  //   position: {my: "left", at: "right", of: username}
+
+  //       });
+  // });
 
 	function validateForm() {
 
@@ -79,40 +146,133 @@
 
 	    // // USERNAME VALIDATION//
 	    if (x == null || x == "" ) {
-	        alert("Username is blank");
-	        return false;
+	       	$(function() {
+			    $( "#dialog" ).dialog({
+
+				    modal: true,
+				    dialogClass: "alert",
+				    closeText: "X",
+				    closeOnEscape: true,
+				    position: {my: "left", at: "right", of: username},
+				    show: { effect: "blind", duration: 700 },
+				    width: 200,
+				    height: 90,
+
+
+				}).html("Username cannot be blank");
+			 
+		 	});
+	       	return false
+	       	$("#username").focus();
 	    }
 
     	if((/^\w+s/).test(x)){
-    		alert("character error");
+    			alert ("invalid characters")
     		return false;
-    		x.focus();
+    		$("#username").focus();
     	}
 
     	if (y == ""){
-    		alert("password is blank");
+    		$(function() {
+			    $( "#dialog" ).dialog({
+
+				    modal: true,
+				    dialogClass: "alert",
+				    closeText: "X",
+				    closeOnEscape: true,
+				    position: {my: "left", at: "right", of: pw1},
+				    show: { effect: "blind", duration: 700 },
+				    width: 200,
+				    height: 90,
+
+
+				}).html("Password cannot be blank");
+			 
+		 	});
     		return false;
     		y.focus()
     	}	
     	if (y == x){
-    		alert("Password cannot be the username");
+    		$(function() {
+			    $( "#dialog" ).dialog({
+
+				    modal: true,
+				    dialogClass: "alert",
+				    closeText: "X",
+				    closeOnEscape: true,
+				    position: {my: "left", at: "right", of: pw1},
+				    show: { effect: "blind", duration: 700 },
+				    width: 200,
+				    height: 90,
+
+
+				}).html("Password cannot be the same as username");
+			 
+		 	});
     		return false;
     		y.focus();
 
     		}
-    	if (y.length < 6){
-    		alert("password must be at least 6 characters");
-    		return false;
-    		y.focus();
-    	}
-    	if(!(/[0-9]/).test(y)){
-    		alert("Password must have at least 1 number");
+    		if( y.length < 6 || !(/[0-9]/).test(y)){
+    		$(function() {
+			    $( "#dialog" ).dialog({
+
+				    modal: true,
+				    dialogClass: "alert",
+				    closeText: "X",
+				    closeOnEscape: true,
+				    position: {my: "left", at: "right", of: pw1},
+				    show: { effect: "blind", duration: 700 },
+				    width: 200,
+				    height: 90,
+
+
+				}).html("Password must have at least 1 number");
+			 
+		 	});
     		return false;
     		y.focus();
     	} 
+    	if (y.length < 6){
+    		$(function() {
+			    $( "#dialog" ).dialog({
+
+				    modal: true,
+				    dialogClass: "alert",
+				    closeText: "X",
+				    closeOnEscape: true,
+				    position: {my: "left", at: "right", of: pw1},
+				    show: { effect: "blind", duration: 700 },
+				    width: 400,
+				    height: 90,
+
+
+				}).html("Password must have at least 6 characters. Including at least a number");
+			 
+		 	});
+    		return false;
+    		y.focus();
+    	}
+    	
     	
     	if(z == "" || y !== z ){
-    		alert("passwords do not match. Please Re-enter");
+    		$(function() {
+			    $( "#dialog" ).dialog({
+
+				    modal: true,
+				    dialogClass: "alert",
+				    closeText: "X",
+				    closeOnEscape: true,
+				    position: {my: "left", at: "right", of: pw2},
+				    show: { effect: "blind", duration: 700 },
+				    hide: { effect: "blind", duration: 700 },
+				    width: 200,
+				    height: 90,
+
+
+				}).html("Passwords do not match");
+			 
+		 	});
     		return false
     		z.focus();
     		}
