@@ -6,27 +6,51 @@
 	<style type="text/css">
 		body{
 
-			background: #f4f6eb;
-			font-family: courier;
+			background: url("paper.jpg");
+			font-family: courier new;
 			text-align: center;
-			width: 400px;
-			margin: 100px 400px;
+			width: 800px;
+			margin: 100px 300px;
 		}
+		
 		div{
-			background: #fafbf7;
-			border-radius: 5px;
+			margin-left: 200px;
 		}
+		h1{
+			font-size: 50px;
+			left: 80px;
+
+		}
+		.one{
+			position: relative;
+			top:30px;
+			left: 0px;
+		
+		}
+		.two{
+			position: relative;
+			top:5px;
+			left: 0px;
+		}
+
+		#global{
+			position: relative;
+			top:25px;
+			left: 0px;
+		}
+
+		
 	</style>
 </head>
 
 <body>
 	<div>
-	<h1>Global scope</h1>
+	<h1 class="one">Global scope</h1>
 	<h2 id="global"></h2>
 
 	</div>
 	<div>
-		<h1>Local Scope</h1>
+		<h1 class="two">Local Scope</h1>
 		<h2 id="local"></h2>
 	</div>
 	<script>

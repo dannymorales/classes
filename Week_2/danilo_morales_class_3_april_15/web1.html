@@ -28,19 +28,67 @@
 
 		transition: .5s ease;
 	}
+	ul{
+		margin: 500px 100px;
+		position: absolute;
+		transition: .5s ease;
+	}
+	ul li{
+		font-size: 100px;
+		list-style-type: none;
+		float: left;
+		padding: 25px;
+		margin: 10px;
+		line-height: 50px;
+	}
+
+	#block1{
+
+		width: 100px;
+		height: 10px;
+		background: black;
+		color:white;
+		font-size: 40px;
+		transition: 0.5s;
+		border-radius: 10px;
+	}
+	#block2{
+
+		width: 100px;
+		height: 10px;
+		background: black;
+		color:white;
+		font-size: 40px;
+		border-radius: 10px;
+	}
+	#block3{
+
+		width: 100px;
+		height: 10px;
+		background: black;
+		color:white;
+		font-size: 40px;
+		border-radius: 10px;
+	}
 </style>
 <body class="body" onload="startTime()">
 
-<div id="clock">
+
+	<ul>
+		<li id="hours"></li>
+		<li>:</li>
+		<li id="min"></li>
+		<li>:</li>
+		<li id="sec"></li>
+	</ul>
+
+<div id="bars">	
+	<div id="block3">Hours</div>
+	<div id="block2">Minutes</div>
+	<div id="block1">Seconds</div>
 </div>
 
-<!-- <form action="/" method="POST">
-	<label for="username">Username</label>
-		<input type="text" name="username" id="username" value="m"><br>
-		<label for="password">Password</label>
-		<input type="text" name="password" id="password"><br>
-		<button type="button" id="btn" name="submit" value="login" onclick="myFunction">Submit</button><br>
-</form> -->
+
 	
 	<script type="text/javascript">
 
@@ -51,11 +99,27 @@
 	    var s=today.getSeconds();
 	    m = checkTime(m);
 	    s = checkTime(s);
-	    document.getElementById('clock').innerHTML = h+":"+m+":"+s;
+	    document.getElementById('hours').innerHTML = h;
+	  	document.getElementById('min').innerHTML = m;
+	  	document.getElementById('sec').innerHTML = s;
 
-	    var t = setTimeout(function(){startTime()}, 500);
-	    // return false;
+	    $("#hours").html(h).css(
+	    	"font-size", h * 80);
+	    $("#min").html(m).css(
+	    	"font-size", m * 10);
+
+	    $("#sec").html(s).css(
+	    	"font-size", s * 5);
+
+	    $("#block1").css("width", s * 25);
+	    $("#block2").css("width", m * 25);
+	    $("#block3").css("width", h * 100);
+
+	    var t = setTimeout(function(){startTime()}, 000);
+	    return false;
+	   
 	}
+
 
 function checkTime(i) {
     if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
@@ -70,13 +134,26 @@ $(function  mytime() {
 
 	if (sec%2 == 0){
 		$("body").css("background-color", "black");
-		$("#clock").css("color", "white");
-	} else {
+		$("ul").css("color", "white");
+		$("#block1").css("background-color", "white");
+		$("#block1").css("color", "black");
+		$("#block2").css("background-color", "white");
+		$("#block2").css("color", "black");
+		$("#block3").css("background-color", "white");
+		$("#block3").css("color", "black");
+		} else {
 		$("body").css("background-color", "white");
-		$("#clock").css("color", "black");
+		$("ul").css("color", "black");
+		$("#block1").css("background-color", "black");
+		$("#block1").css("color", "white");
+		$("#block2").css("background-color", "black");
+		$("#block2").css("color", "white");
+		$("#block3").css("background-color", "black");
+		$("#block3").css("color", "white");
 	};
 
-	var tt = setTimeout(function(){mytime()}, 10000);
+
+	var tt = setTimeout(function(){mytime().sec}, 3000);
 	return false;
 })
 

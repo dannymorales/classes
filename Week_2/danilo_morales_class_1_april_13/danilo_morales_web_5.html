@@ -105,7 +105,8 @@
 		
  		$('#btn').click(function(){
 			if($("#date").val() == ""){
-				alert ("blank");
+				alert ("The date field is blank");
+				$("#date").focus();
 			}
 			else if ($('#username').val() == ""){
 				alert('Your username is empty. Please enter your password');
