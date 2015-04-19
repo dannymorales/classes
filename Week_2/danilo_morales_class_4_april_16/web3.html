@@ -14,8 +14,9 @@
 	body{
 
 		background: #cfd1d6;
-		margin: 25px;
+		margin: 0 400px;
 		padding: 25px;
+		width: 1000px;
 
 	}
 	input{
@@ -35,7 +36,9 @@
 		display: inline;
 	    clear: left;
 	    width: 0px;
-	    text-align: right;
+	    text-align: left;
+	    clear: both;
+
 
 
 	}
@@ -45,26 +48,43 @@
 		margin: 60px;
 		clear: both;
 		float: none;
-		transition: .5s;
+		transition: .2s;
 	}
 	#btn:hover{
-		background-color: #b8dbd3;
+		background-color: #c9a2a8;
 	}
 
 #dialog{
 	display: none;
 }	
-#draggable { 
+.nav{
 
-
+}
+form{
+	clear: both;
+}
+.draggable { 
+	float: left;
+	display: inline-block;
+	padding: 25px;
+	margin: 10px;
     width: 150px; 
     height: 150px; 
     padding: 0.5em; 
     border: 1px solid;
     cursor: pointer;
     background-color: #fccbd2;
-    -ms-text-overflow: ellipsis;
     text-align: center;
+    list-style-type: none;
+    transition: 0.2s;
+  }
+ .draggable:hover{
+ 	background: #c9a2a8;
+ }
+
+  a{
+  	text-decoration: none;
+  	color: black;
   }
   .alert {
   	background: #babcc0;
@@ -101,6 +121,13 @@
 			<h2>Index</h2>
 			<li>Username and password</li>
 		</ul>
+
+<ul class="nav">
+	<li class="draggable"><a href="#">HOME</a><p>I am a graggable menu</p></li>
+	<li class="draggable"><a href="#">ABOUT</a><p>I am also agraggable menu</p></li>
+	<li class="draggable"><a href="#">CONTACT</a><p>me too!! Drag me!</p></li>
+</ul>
+
 <form name="myForm" onsubmit="return validateForm()" method="post">
 	<label for="username">Username</label>
 	<input type="text" id="username" name="username"><br>
@@ -112,10 +139,6 @@
 	<button type="submit" id="btn">SUBMIT</button>
 </form>
 
-<div id="draggable" class="ui-widget-content">
-  <p>Drag me around</p>
-</div>
-
 
 <div id="dialog" title="Error:">
   <p>This is the default dialog.</p>
@@ -123,19 +146,10 @@
 	
 	<script>
 		$(function() {
-    $( "#draggable" ).draggable();
+    $( ".draggable" ).draggable();
   });
 
-  // $(function() {
-  //   $( "#dialog" ).dialog({
-
-  //     modal: true,
-  //     dialogClass: "alert",
-  //     closeText: "X",
-  //   position: {my: "left", at: "right", of: username}
-
-  //       });
-  // });
+  
 
 	function validateForm() {
 
@@ -154,9 +168,19 @@
 				    closeText: "X",
 				    closeOnEscape: true,
 				    position: {my: "left", at: "right", of: username},
-				    show: { effect: "blind", duration: 700 },
+				    show: { effect: "fold", duration: 700 },
 				    width: 200,
 				    height: 90,
+				 //    // buttons: 
+					//    //  {
+					//    //    text: "Ok",
+					//    //    click: function() {
+					//    //      $(this).dialog( "close" );
+					//    //    }
+					 
+					      
+					// }
+
 
 
 				}).html("Username cannot be blank");
@@ -265,7 +289,6 @@
 				    closeOnEscape: true,
 				    position: {my: "left", at: "right", of: pw2},
 				    show: { effect: "blind", duration: 700 },
-				    hide: { effect: "blind", duration: 700 },
 				    width: 200,
 				    height: 90,
 

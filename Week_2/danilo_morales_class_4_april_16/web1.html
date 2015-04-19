@@ -2,10 +2,138 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Javascript Objet</title>
-	<script type="text/javascript" src="Object.js"></script>
+	<title>Windows Navigator</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+	<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+  	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+	
 </head>
-<body>
-	<h2>Hello There!!</h2>
+<style>
+	
+	body{
+
+		background: #fff5da;
+		margin: 0px;
+		padding: 25px;
+		width: 70%;
+		font-family: courier new;
+
+	}
+	.header{
+        width: 80%;
+         margin: 5% 30%;
+		background: #ccc4ae;
+		text-align: center;
+		position: relative;
+		animation: headermov;
+		animation-duration: 2s;
+        -webkit-animation: headermov;
+        -webkit-animation-duration: 1s;
+        clear: both;
+	}
+	@keyframes headermov{
+
+		0% {left: 2000px;}
+		100% {left: 00px;}
+	}
+	@-webkit-keyframes headermov{
+
+		0% {left: 2000px;}
+		100% {left: 00px;}
+	}
+	li{
+			
+		list-style-type: none;
+		line-height: 30px;
+	}
+
+    .container{
+        width: 80%;
+        margin: 5% 30%;
+        background: #ccc4ae;
+        text-align: center;
+        position: relative;
+        -webkit-animation: containermov 1  2s;
+        -o-animation: containermov 1  2s;
+        animation: containermov 1  2s;
+
+
+    }
+	
+    @keyframes containermov{
+
+        0% {left: -2000px;}
+        100% {left: 00px;}
+    }
+    @-webkit-keyframes containermov{
+
+        0% {left: -2000px;}
+        100% {left: 00px;}
+    }
+
+    @media screen and (max-width: 1500px){
+        
+    }
+	
+
+</style>
+<body onload="myFunction()">
+
+
+	<div class="header">
+	<h2>Day 7 Assignment</h2>
+
+		<ul>
+			<h2>Index</h2>
+			<li>Check browser type</li>
+			<li>Check Operating System</li>
+		</ul>
+	</div>
+
+    <div class="container">
+        <ul class="ul">
+            <li id="os"></li>
+            <li id="browser"></li>
+            <li id="browsersize"></li>
+            <li id="browserver"></li>
+            <li id="browserplat"></li>
+            <li id="browserlang"></li>
+            <li id="mobiledisplay"></li>
+            <li></li>
+        </ul>
+    </div>
+
+	
+	<script>
+	
+    function myFunction() { 
+        
+       var OSName="Unknown OS";
+        if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";
+        if (navigator.appVersion.indexOf("Mac")!=-1) OSName="MacOS";
+        if (navigator.appVersion.indexOf("X11")!=-1) OSName="UNIX";
+        if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";
+
+        document.getElementById('os').innerHTML = "Your operating system is " + OSName;
+      
+
+         var brName= "Unknown browser";
+        if (navigator.userAgent.indexOf("Chrome")!=-1) brName="Chrome";
+        if (navigator.userAgent.indexOf("Opera")!=-1) brName="Opera";
+        if (navigator.userAgent.indexOf("FireFox")!=-1) brName="FireFox";
+        if (navigator.userAgent.indexOf("MSIE")!=-1) brName="Internet Explorer";
+        document.getElementById('browser').innerHTML = "Your operating system is " + brName;
+         }
+         $(window).resize(function  () {
+             $("#browsersize").html("Your window width is " + $(window).width()+"px" + " and " + $(window).height()+"px height" );
+         }).resize();
+         
+
+
+
+	</script>
 </body>
 </html>
