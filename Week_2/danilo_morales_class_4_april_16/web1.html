@@ -74,10 +74,34 @@
         100% {left: 00px;}
     }
 
-    @media screen and (max-width: 1500px){
+    @media screen and (max-width: 900px){
+        
+        body{
+            font-size: 20px;
+        }
+    }
+	@media screen and (max-width: 640px){
+        
+        body{
+            width: 90%;
+            font-size: 30px;
+        }
+
+        .container{
+        width: 100%;
+        margin: 1px
+        background: #ccc4ae;
+        text-align: center;
         
     }
-	
+     .header{
+        width: 100%;
+        margin: 1px;
+        background: #ccc4ae;
+        text-align: center;
+        
+    }
+    }
 
 </style>
 <body onload="myFunction()">
@@ -127,9 +151,24 @@
         if (navigator.userAgent.indexOf("MSIE")!=-1) brName="Internet Explorer";
         document.getElementById('browser').innerHTML = "Your operating system is " + brName;
          }
+         
          $(window).resize(function  () {
              $("#browsersize").html("Your window width is " + $(window).width()+"px" + " and " + $(window).height()+"px height" );
+        
+             if ($(window).width() > 900){
+                $("#mobiledisplay").html("your window size is good for computers");
+             }
+             if ($(window).width() < 899 ){
+                $("#mobiledisplay").html("your window size is good for tablets");
+             }
+
+             if ($(window).width() < 639){
+                $("#mobiledisplay").html("your window size is good for mobile devices");
+             }
+
+
          }).resize();
+         
          
 
 
