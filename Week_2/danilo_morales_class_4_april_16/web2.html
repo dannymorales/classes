@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+  	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+  	<style type="text/css">
+		body{
+			width: 70%;
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		#galleries{
+
+			margin: auto;
+			list-style-type: none;
+		}
+
+		
+
+		#gallery1{
+
+			background: #ffa07a;
+			position: relative;
+			width: 300px;
+			height: 300px;
+			float: left;
+			margin: 5px;
+			padding: 5px;
+			top: -1000px;
+		}
+		#gallery2{
+			background: #ee8262;
+			position: relative;
+			width: 300px;
+			height: 300px;
+			float: left;
+			margin: 5px;
+			padding: 5px;
+			top: -1000px;
+		}
+		#gallery3{
+			background: #daa520;
+			position: relative;
+			width: 300px;
+			height: 300px;
+			float: left;
+			margin: 5px;
+			padding: 5px;
+			top: -1000px;
+		}
+
+		#lightbox1{
+
+			background: #ffa07a;
+			margin: auto 1px;
+			width: 70%;
+			height: 90%;
+			opacity: 0.5;
+			position: fixed;
+			display: none;
+		}
+		#lightbox1 #image{
+
+			background: white;
+			margin: 15% 25%;
+			width: 50%;
+			height: 50%;
+			position: relative;
+		}
+  	</style>
+
+</head>
+<body>
+
+	<div id="galleries">
+		
+			<div id="gallery1">Gallery1</div>
+			<div id="gallery2">Gallery2</div>
+			<div id="gallery3">Gallery3</div>
+		
+	</div>
+	
+	<div id="lightbox1">
+		
+		<div id="image">
+			
+			IMAGE GOES HERE
+		</div>
+
+		<button type="button" id="btn">Close</button>
+
+	</div>
+	
+	
+	<script>
+	$(function  () {
+				
+				// ANIMATION
+
+				$("#gallery1").animate({
+        			
+       			 	top: '200px',
+   				 }, 300, function  () {
+   				 	$(this).effect("bounce", {times: 3}, 500);
+   				 });
+					$("#gallery2").delay(300).animate({
+        			
+       			 	top: '200px',
+   				 }, 300, function  () {
+   				 	$(this).effect("bounce", {times: 3}, 500);
+   				 });
+					$("#gallery3").delay(600).animate({
+        		
+       			 	top: '200px',
+   				 }, 300, function  () {
+   				 	$(this).effect("bounce", {times: 3}, 500);
+   				 });
+
+					// END OF ANIMATION
+
+					// OPEN LIGHTBOX 1
+
+					$('#gallery1').click(function  () {
+						$(this).fadeOut(1000);
+						$('#gallery2').fadeOut(1000);
+						$('#gallery3').fadeOut(1000);
+						$('#lightbox1').fadeIn(1000);
+					})
+
+					$('#btn').click(function(){
+
+						$('#lightbox1').fadeOut(1000);
+						$('#gallery1').fadeIn(1000);
+						$('#gallery2').delay(300).fadeIn(1000);
+						$('#gallery3').delay(600).fadeIn(1000);
+					});
+
+				});
+
+
+
+
+
+	</script>
+</body>
+</html>

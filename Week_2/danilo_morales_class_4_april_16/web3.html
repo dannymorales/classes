@@ -6,6 +6,9 @@
 
 	<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
   	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 	
 </head>
@@ -123,16 +126,16 @@ form{
 		</ul>
 
 <ul class="nav">
-	<li class="draggable"><a href="#">HOME</a><p>I am a graggable menu</p></li>
-	<li class="draggable"><a href="#">ABOUT</a><p>I am also agraggable menu</p></li>
+	<li class="draggable"><a href="#">HOME</a><p>I am a draggable menu</p></li>
+	<li class="draggable"><a href="#">ABOUT</a><p>I am also a draggable menu</p></li>
 	<li class="draggable"><a href="#">CONTACT</a><p>me too!! Drag me!</p></li>
 </ul>
 
 <form name="myForm" onsubmit="return validateForm()" method="post">
 	<label for="username">Username</label>
-	<input type="text" id="username" name="username"><br>
+	<input type="text" id="username" name="username" data-toggle="tooltip" data-placement="right" title="Please enter username"><br>
 	<label for="Password1">Password</label>
-	<input type="text" id="pw1" name="pw1"><br>
+	<input type="text" id="pw1" name="pw1" data-toggle="tooltip" data-placement="right" title="password  must have more than 6 characters and at least 1 number"><br>
 	<label for="Password2">Re-enter Password</label>
 	<input type="text" id="pw2" name="pw2" ><br>
 	
@@ -145,6 +148,11 @@ form{
 </div>
 	
 	<script>
+
+	$(function(){
+		$('[data-toggle="tooltip"]').tooltip()
+
+	});
 		$(function() {
     $( ".draggable" ).draggable();
   });
@@ -161,6 +169,7 @@ form{
 	    // // USERNAME VALIDATION//
 	    if (x == null || x == "" ) {
 	       	$(function() {
+	  
 			    $( "#dialog" ).dialog({
 
 				    modal: true,
@@ -168,7 +177,6 @@ form{
 				    closeText: "X",
 				    closeOnEscape: true,
 				    position: {my: "left", at: "right", of: username},
-				    show: { effect: "fold", duration: 700 },
 				    width: 200,
 				    height: 90,
 				 //    // buttons: 
@@ -205,7 +213,6 @@ form{
 				    closeText: "X",
 				    closeOnEscape: true,
 				    position: {my: "left", at: "right", of: pw1},
-				    show: { effect: "blind", duration: 700 },
 				    width: 200,
 				    height: 90,
 
@@ -225,7 +232,6 @@ form{
 				    closeText: "X",
 				    closeOnEscape: true,
 				    position: {my: "left", at: "right", of: pw1},
-				    show: { effect: "blind", duration: 700 },
 				    width: 200,
 				    height: 90,
 
@@ -246,7 +252,6 @@ form{
 				    closeText: "X",
 				    closeOnEscape: true,
 				    position: {my: "left", at: "right", of: pw1},
-				    show: { effect: "blind", duration: 700 },
 				    width: 200,
 				    height: 90,
 
@@ -266,7 +271,6 @@ form{
 				    closeText: "X",
 				    closeOnEscape: true,
 				    position: {my: "left", at: "right", of: pw1},
-				    show: { effect: "blind", duration: 700 },
 				    width: 400,
 				    height: 90,
 
@@ -288,7 +292,6 @@ form{
 				    closeText: "X",
 				    closeOnEscape: true,
 				    position: {my: "left", at: "right", of: pw2},
-				    show: { effect: "blind", duration: 700 },
 				    width: 200,
 				    height: 90,
 
