@@ -12,6 +12,14 @@
 			margin-right: auto;
 			margin-left: auto;
 		}
+		.header{
+			text-align: center;
+			font-family: courier;
+			margin: auto 400px;
+		}
+		.header li{
+			list-style-type: none;
+		}
 
 		#galleries{
 
@@ -33,7 +41,7 @@
 			top: -1000px;
 		}
 		#gallery2{
-			background: #ee8262;
+			background: #8b864e;
 			position: relative;
 			width: 300px;
 			height: 300px;
@@ -55,32 +63,72 @@
 
 		#lightbox1, #lightbox2, #lightbox3{
 
-			background: #ffa07a;
-			margin: auto 1px;
-			width: 70%;
-			height: 90%;
-			opacity: 0.5;
-			position: fixed;
+			top: 0px;
+			left: 0%;
+			margin-left: -250px;
+			width: 150%;
+			height: 100%;
+			opacity: 0.6;
+			position: absolute;
 			display: none;
+			z-index: 1001;
 		}
-		#lightbox1 .image, #lightbox2 .image, #lightbox3 .image{
+		#lightbox1{
 
-			background: white;
-			margin: 15% 25%;
+			background: #ffa07a;
+			
+		}
+		#lightbox2{
+
+			background: #8b864e;
+			
+		}
+		#lightbox3{
+
+			background: #daa520;
+			
+		}
+
+		.image{
+			display: none;
+			position: absolute;
+			top: 25%;
+			left: 25%;
 			width: 50%;
 			height: 50%;
-			position: relative;
+			padding: 16px;
+			border: 1px solid black;
+			background-color: white;
+			z-index:1002;
+			overflow: auto;
+			box-shadow: 3px 3px 3px black;
+			-webkit-box-shadow: 0px 0px 5px black;
+
+		}
+s
 		}
 		.btn{
-			top: 600px;
-			left: 800px;
+			
 			width: 100px;
 			height: 50px;
+			float: right;
 		}
   	</style>
 
 </head>
 <body>
+	<div class="header">
+		<h2>Day 7 Assignment</h2>
+
+			<ul>
+				<h2>Index</h2>
+				<li>Check browser type</li>
+				<li>Check Operating System</li>
+	            <li>Check window width and height</li>
+	            <li>display system depending on window size</li>
+			</ul>
+	</div>
+	
 
 	<div id="galleries">
 		
@@ -90,38 +138,17 @@
 		
 	</div>
 	
-	<div id="lightbox1">
+	<div id="lightbox1"></div>
+	<div id="lightbox2"></div>
+	<div id="lightbox3"></div>
 		
-		<div class="image">
-			
-			LIGHTBOX 1
-		</div>
-
+	<div class="image">
+		
+		<h2>LIGHTBOX 1</h2>
 		<button type="button" class="btn">Close</button>
-
 	</div>
 
-	<div id="lightbox2">
-		
-		<div class="image">
-			
-			LIGHTBOX 2
-		</div>
 
-		<button type="button" class="btn">Close</button>
-
-	</div>
-	
-	<div id="lightbox3">
-		
-		<div class="image">
-			
-			LIGHTBOX 3
-		</div>
-
-		<button type="button" class="btn">Close</button>
-
-	</div>
 	<script>
 	$(function  () {
 				
@@ -164,23 +191,26 @@
 					$('#gallery1').click(function  () {
 						$(this).fadeOut(1000).siblings().fadeOut(1000);
 						$('#lightbox1').delay(300).fadeIn(1000);
+						$('.image').delay(300).fadeIn(1000)
 					});
 
 					
 					$('#gallery2').click(function  () {
 						$(this).fadeOut(1000).siblings().fadeOut(1000);
 						$('#lightbox2').delay(300).fadeIn(1000);
+						$('.image').delay(300).fadeIn(1000)
 					});
 					$('#gallery3').click(function  () {
 						$(this).fadeOut(1000).siblings().fadeOut(1000);
 						$('#lightbox3').delay(400).fadeIn(1000);
+						$('.image').delay(300).fadeIn(1000)
 					});
 
 
 					$('.btn').click(function(){
 
 					
-						if ($('#lightbox1, #lightbox2, #lightbox3').fadeOut()){
+						if ($('#lightbox1, #lightbox2, #lightbox3, .image').fadeOut()){
 						}
 						$('#gallery1').fadeIn(1000).next().delay(300).fadeIn(1000).siblings().delay(600).fadeIn(1000);
 
