@@ -53,7 +53,7 @@
 			top: -1000px;
 		}
 
-		#lightbox1{
+		#lightbox1, #lightbox2, #lightbox3{
 
 			background: #ffa07a;
 			margin: auto 1px;
@@ -63,13 +63,19 @@
 			position: fixed;
 			display: none;
 		}
-		#lightbox1 #image{
+		#lightbox1 .image, #lightbox2 .image, #lightbox3 .image{
 
 			background: white;
 			margin: 15% 25%;
 			width: 50%;
 			height: 50%;
 			position: relative;
+		}
+		.btn{
+			top: 600px;
+			left: 800px;
+			width: 100px;
+			height: 50px;
 		}
   	</style>
 
@@ -86,16 +92,36 @@
 	
 	<div id="lightbox1">
 		
-		<div id="image">
+		<div class="image">
 			
-			IMAGE GOES HERE
+			LIGHTBOX 1
 		</div>
 
-		<button type="button" id="btn">Close</button>
+		<button type="button" class="btn">Close</button>
+
+	</div>
+
+	<div id="lightbox2">
+		
+		<div class="image">
+			
+			LIGHTBOX 2
+		</div>
+
+		<button type="button" class="btn">Close</button>
 
 	</div>
 	
-	
+	<div id="lightbox3">
+		
+		<div class="image">
+			
+			LIGHTBOX 3
+		</div>
+
+		<button type="button" class="btn">Close</button>
+
+	</div>
 	<script>
 	$(function  () {
 				
@@ -122,22 +148,49 @@
 
 					// END OF ANIMATION
 
+					// ON MOUSE OVER
+
+					$('#gallery1, #gallery2, #gallery3').mouseover(function  () {
+						$(this).animate({"opacity": "0.5"}, "slow");
+					});
+					$('#gallery1, #gallery2, #gallery3').mouseout(function  () {
+						$(this).animate({"opacity": "1"}, "slow");
+					});
+
+					// END OF MOUSE OUT
+
 					// OPEN LIGHTBOX 1
 
 					$('#gallery1').click(function  () {
-						$(this).fadeOut(1000);
-						$('#gallery2').fadeOut(1000);
-						$('#gallery3').fadeOut(1000);
-						$('#lightbox1').fadeIn(1000);
-					})
-
-					$('#btn').click(function(){
-
-						$('#lightbox1').fadeOut(1000);
-						$('#gallery1').fadeIn(1000);
-						$('#gallery2').delay(300).fadeIn(1000);
-						$('#gallery3').delay(600).fadeIn(1000);
+						$(this).fadeOut(1000).siblings().fadeOut(1000);
+						$('#lightbox1').delay(300).fadeIn(1000);
 					});
+
+					
+					$('#gallery2').click(function  () {
+						$(this).fadeOut(1000).siblings().fadeOut(1000);
+						$('#lightbox2').delay(300).fadeIn(1000);
+					});
+					$('#gallery3').click(function  () {
+						$(this).fadeOut(1000).siblings().fadeOut(1000);
+						$('#lightbox3').delay(400).fadeIn(1000);
+					});
+
+
+					$('.btn').click(function(){
+
+					
+						if ($('#lightbox1, #lightbox2, #lightbox3').fadeOut()){
+						}
+						$('#gallery1').fadeIn(1000).next().delay(300).fadeIn(1000).siblings().delay(600).fadeIn(1000);
+
+						
+
+						
+					});
+
+					// END OF LIGHTBOX 3
+
 
 				});
 
