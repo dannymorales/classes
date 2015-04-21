@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -29,7 +29,7 @@
 		transition: .5s ease;
 	}
 	ul{
-		margin: 500px 100px;
+		margin: 400px 100px;
 		position: absolute;
 		transition: .5s ease;
 	}
@@ -106,16 +106,16 @@
 	  	
 
 	    $("#hours").html(h).css(
-	    	"font-size", h * 20);
+	    	"font-size", h * 5);
 	    $("#min").html(m).css(
-	    	"font-size", m * 10);
+	    	"font-size", m * 5);
 
 	    $("#sec").html(s).css(
 	    	"font-size", s * 5);
 
-	    $("#block1").css("width", s * 25);
-	    $("#block2").css("width", m * 25);
-	    $("#block3").css("width", h * 50);
+	    $("#block1").css("width", s * 10);
+	    $("#block2").css("width", m * 10);
+	    $("#block3").css("width", h * 20);
 
 	    var t = setTimeout(function(){startTime()}, 000);
 	    return false;

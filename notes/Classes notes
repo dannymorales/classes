@@ -60,3 +60,8 @@ the dot (.) repeats the previous entry.
 
 =>Capital V to select all.
 
+RUBY
+
+gets.chomp => avoids the "text"/n responsed.
+
+
