@@ -1,0 +1,155 @@
+body{
+
+max-width: 2000px;
+margin: 10px; 
+}
+.toggle-nav{
+	display: none;
+}
+
+.mainheader {
+	text-align: center;
+}
+
+
+.row1{
+	background: white;
+	height: auto;
+	width: 90%;
+	margin: 30px;
+	padding: 2px;
+}
+
+.nav{
+	padding: 0;
+	width: 90%;
+	margin: auto;
+}
+
+.nav ul li{
+display: inline-table;
+list-style-type: none;
+line-height: 40px;
+margin-right: 0px;
+}
+a.a{
+	text-decoration: none;
+	padding: 10px 30px;
+	color: black;
+	overflow: none;
+	border-radius: 10px;
+	transition: .5s
+}
+
+
+ul .mediali > li{
+	display: block;
+	margin: 0px;
+	background: #cfcfcf;
+	padding: 5px 30px 5px 5px;
+	text-align: left;
+	
+
+}
+
+ul .mediali{
+	display: none;
+
+}
+
+
+ul .mediali > li:hover{
+	background: white;
+}
+
+
+header{
+	text-align: center;
+	padding: 25px;
+
+}
+
+.quote{
+	padding: 10px;
+	margin: 10px;
+	text-align: right;
+	width: 90%;
+}
+
+.col{
+	float: left;
+	width: 45%;
+	padding: 2xp;
+	margin: 25px;
+}
+.footer{
+	clear: both;
+
+}
+
+.facebookbutton{
+	background-color: #ababab;
+	width: 200px;
+	height: 53px;
+	position: absolute;
+	right: -150px;
+	top: 300px;
+	border-radius: 10px;
+	transition-property: width;
+	transition-duration: 1s;
+}
+.facebookbutton:hover{
+	width: 250px;
+}
+img.facebook{
+	height: 50px;
+	width: 50px;
+}
+
+.twitterbutton{
+	background-color: #ababab;
+	width: 200px;
+	height: 53px;
+	position: absolute;
+	right: -150px;
+	top: 360px;
+	border-radius: 10px;
+	transition-property: width;
+	transition-duration: 1s;
+}
+.twitterbutton:hover{
+	width: 250px;
+}
+img.twitter{
+	height: 50px;
+	width: 50px;
+}
+
+.instagrambutton{
+	background-color: #ababab;
+	width: 200px;
+	height: 53px;
+	position: absolute;
+	right: -160px;
+	top: 420px;
+	display: flex;
+	border-radius: 10px;
+	padding: 0 0 0 10px;
+	transition-property: width;
+	transition-duration: 1s;
+}
+.instagrambutton:hover{
+	width: 250px;
+}
+
+img.instagram{
+	height: 30px;
+	width: 30px;
+	align-self: center;
+}
+
+
+
+
+
+

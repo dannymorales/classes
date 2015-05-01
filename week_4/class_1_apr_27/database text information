@@ -1,0 +1,95 @@
+Last login: Mon Apr 27 16:02:46 on ttys000
+gabrielas-mbp:~ gabrielafuentes_Powerbook$ cd /Users/gabrielafuentes_Powerbook/Documents/Danilo/Classes/week_4/class_1_apr_27 
+gabrielas-mbp:class_1_apr_27 gabrielafuentes_Powerbook$ psql -d dannydb -f postgres.sql
+postgres.sql: No such file or directory
+gabrielas-mbp:class_1_apr_27 gabrielafuentes_Powerbook$ psql -d dannydb -f postgress.sql
+psql:postgress.sql:5: ERROR:  syntax error at or near "dateCreated"
+LINE 4:  dateCreated timestamp DEFAULT current_timestamp
+         ^
+gabrielas-mbp:class_1_apr_27 gabrielafuentes_Powerbook$ psql -d dannydb -f postgress.sql
+CREATE TABLE
+gabrielas-mbp:class_1_apr_27 gabrielafuentes_Powerbook$ psql -d dannydb
+psql (9.4.1)
+Type "help" for help.
+
+dannydb=# \q
+gabrielas-mbp:class_1_apr_27 gabrielafuentes_Powerbook$ sublime
+gabrielas-mbp:class_1_apr_27 gabrielafuentes_Powerbook$ psqldb danny2db
+-bash: psqldb: command not found
+gabrielas-mbp:class_1_apr_27 gabrielafuentes_Powerbook$ createdb danny2db
+gabrielas-mbp:class_1_apr_27 gabrielafuentes_Powerbook$ psql -d danny2db -f products.sql
+psql:products.sql:8: ERROR:  syntax error at or near ")"
+LINE 5:  productprice money(),
+                            ^
+gabrielas-mbp:class_1_apr_27 gabrielafuentes_Powerbook$ psql -d danny2db -f products.sql
+CREATE TABLE
+gabrielas-mbp:class_1_apr_27 gabrielafuentes_Powerbook$ psql
+psql (9.4.1)
+Type "help" for help.
+
+gabrielafuentes_Powerbook=# SHOW TABLES
+gabrielafuentes_Powerbook-# SHOW DATABASES
+gabrielafuentes_Powerbook-# \L
+Invalid command \L. Try \? for help.
+gabrielafuentes_Powerbook-# \l
+                                                                   List of databases
+           Name            |           Owner           | Encoding |   Collate   |    Ctype    |                    Access privileges                    
+---------------------------+---------------------------+----------+-------------+-------------+---------------------------------------------------------
+ danny2db                  | gabrielafuentes_Powerbook | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ dannydb                   | gabrielafuentes_Powerbook | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ gabrielafuentes_Powerbook | gabrielafuentes_Powerbook | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ postgres                  | gabrielafuentes_Powerbook | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ template0                 | gabrielafuentes_Powerbook | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/gabrielafuentes_Powerbook                           +
+                           |                           |          |             |             | gabrielafuentes_Powerbook=CTc/gabrielafuentes_Powerbook
+ template1                 | gabrielafuentes_Powerbook | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/gabrielafuentes_Powerbook                           +
+                           |                           |          |             |             | gabrielafuentes_Powerbook=CTc/gabrielafuentes_Powerbook
+(6 rows)
+
+gabrielafuentes_Powerbook-# /t
+gabrielafuentes_Powerbook-# \dt
+No relations found.
+gabrielafuentes_Powerbook-# \connect products.sql
+FATAL:  database "products.sql" does not exist
+Previous connection kept
+gabrielafuentes_Powerbook-# cd /Users/gabrielafuentes_Powerbook/Documents/Danilo/Classes/week_4/class_1_apr_27 
+gabrielafuentes_Powerbook-# \connect products.sql
+FATAL:  database "products.sql" does not exist
+Previous connection kept
+gabrielafuentes_Powerbook-# \connect products
+FATAL:  database "products" does not exist
+Previous connection kept
+gabrielafuentes_Powerbook-# psql
+gabrielafuentes_Powerbook-# \l
+                                                                   List of databases
+           Name            |           Owner           | Encoding |   Collate   |    Ctype    |                    Access privileges                    
+---------------------------+---------------------------+----------+-------------+-------------+---------------------------------------------------------
+ danny2db                  | gabrielafuentes_Powerbook | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ dannydb                   | gabrielafuentes_Powerbook | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ gabrielafuentes_Powerbook | gabrielafuentes_Powerbook | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ postgres                  | gabrielafuentes_Powerbook | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ template0                 | gabrielafuentes_Powerbook | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/gabrielafuentes_Powerbook                           +
+                           |                           |          |             |             | gabrielafuentes_Powerbook=CTc/gabrielafuentes_Powerbook
+ template1                 | gabrielafuentes_Powerbook | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/gabrielafuentes_Powerbook                           +
+                           |                           |          |             |             | gabrielafuentes_Powerbook=CTc/gabrielafuentes_Powerbook
+(6 rows)
+
+gabrielafuentes_Powerbook-# \q
+gabrielas-mbp:class_1_apr_27 gabrielafuentes_Powerbook$ psql -d danny2db
+psql (9.4.1)
+Type "help" for help.
+
+danny2db=# \d
+                        List of relations
+ Schema |      Name       |   Type   |           Owner           
+--------+-----------------+----------+---------------------------
+ public | products        | table    | gabrielafuentes_Powerbook
+ public | products_id_seq | sequence | gabrielafuentes_Powerbook
+(2 rows)
+
+danny2db=# INSERT INTO products (productname) VALUES (house);
+ERROR:  column "house" does not exist
+LINE 1: INSERT INTO products (productname) VALUES (house);
+                                                   ^
+danny2db=# INSERT INTO products (productname) VALUES ('house');
+INSERT 0 1
+danny2db=# 

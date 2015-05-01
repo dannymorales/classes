@@ -1,0 +1,232 @@
+body{
+
+width: 900px;
+margin: 10px; 
+background color: blue;
+}
+
+
+.toggle-nav{
+	display: block;
+	padding: 15px;
+	border-bottom: none;
+	margin: 10px;
+}
+
+.mainheader {
+	text-align: left;
+	font-size: 35px;
+	margin: 25px auto;
+}
+
+.row1{
+	width: 90%;
+	margin: 2px;
+	padding: 2px;
+}
+
+.nav{
+	display: none;
+}
+
+.nav ul li{
+	display: list-item;
+	padding: 10px;
+	margin: 5px;
+	text-align: left;
+
+}
+
+header{
+	text-align: center;	padding: 25px;
+
+}
+
+a.a:hover{
+	background-color: #cfcfcf;
+	
+}
+
+.quote{
+	display: none;	
+}
+
+.col{
+	width: 60%;
+	padding: 15xp;
+	margin: 25px;
+
+}
+.articles{
+	width: auto;
+}
+.footer{
+	float: none;
+
+}
+
+.facebookbutton{
+	background-color: #ababab;
+	width: 200px;
+	height: 40px;
+	position: absolute;
+	right: -150px;
+	top: 2px;
+	border-radius: 10px;
+}
+
+img.facebook{
+	height: 35px;
+	width: 35px;
+}
+
+.twitterbutton{
+	background-color: #ababab;
+	width: 200px;
+	height: 40px;
+	position: absolute;
+	right: -150px;
+	top: 50px;
+	border-radius: 10px;
+
+}
+
+img.twitter{
+	height: 35px;
+	width: 35px;
+}
+
+.instagrambutton{
+	background-color: #ababab;
+	width: 200px;
+	height: 40px;
+	position: absolute;
+	right: -160px;
+	top: 98px;
+	display: flex;
+	border-radius: 10px;
+	padding: 0 0 0 10px;
+	
+}
+
+img.instagram{
+	height: 20px;
+	width: 20px;
+	align-self: center;
+}
+.nav-expanded{
+	display: block;
+}
+/*MULTIMEDIA STUFF STARTS HERE*/
+.menupanels{
+	width: 70%;
+}
+
+.menupanels .menu{
+	float: none;
+	display: inline-block;
+	list-style-type: none;
+	margin: 5px;
+	width: 20px;
+	text-align: left;
+	clear: both;
+}
+.menupanels ul li{
+	float: none;
+	
+	list-style-type: none;
+	display: inline-block;
+	padding: 25px;
+	margin: 5px;
+	cursor: pointer;
+	transition: .5s;
+	text-align: left;
+	clear: both;
+}
+.menupanels ul li.active{
+	background: #cfcfcf;
+}
+.menupanels ul li:hover{
+	background: #ababab;
+}
+.panel{
+	float: none;
+	width: 80%;
+	display: none;
+}
+.videospanel{
+	float: none;
+	padding: 10px;
+
+}
+
+.panel.active{
+	display: block;
+	background: #cfcfcf;
+}
+
+
+.vidcol1 {
+	float: none;
+	width: 100%;
+	display: inline-block;
+	padding: 15px 0px;
+	margin: 10px;
+	clear: both;
+
+}
+.vidcol2 {
+	float: none;
+	width: 100%;
+	display: inline-block;
+	padding: 15px 0px;
+	margin: 10px;
+}
+.vidcol3 {
+	float: none;
+	width: 100%;
+	display: inline-block;
+	padding: 15px 0px;
+	margin: 10px;
+}
+
+.photocol1 {
+	float: left;
+	width: 100%;
+	display: inline-block;
+	padding: 15px 0px;
+	margin: 10px;
+}
+
+.photocol2 {
+	float: left;
+	width: 100%;
+	display: inline-block;
+	padding: 15px 0px;
+	margin: 10px;
+}
+
+.photocol3{
+	float: left;
+	width: 31%;
+	display: inline-block;
+	padding: 15px 0px;
+	margin: 10px;
+}
+
+#photospanel img{
+	border: 1px solid gray;
+}
+iframe{
+	float: none
+	position: absolute;
+	width: 100px 80px;
+	clear: both;
+	
+}
+
+
+
+
+
+

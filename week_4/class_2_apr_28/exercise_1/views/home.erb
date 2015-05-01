@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>My first Sinatra work</title>
+</head>
+<body>
+
+	<% @users.each do |user| %>
+		
+		<h2><%= user.fname %></h2>
+		<p><%= user.lname %></p>
+
+	<% end %>
+
+
+	
+</body>
+</html>

@@ -1,0 +1,273 @@
+body{
+max-width: 2000px;
+margin: 10px; 
+}
+.toggle-nav{
+	display: none;
+}
+
+.mainheader {
+	text-align: center;
+}
+input{
+	border: 1px solid black;
+	padding: 10px;
+	margin: 10px;
+
+}
+form{
+
+	
+}
+.row1{
+	background: white;
+	height: auto;
+	width: 90%;
+	margin: 30px;
+	padding: 2px;
+}
+
+.nav{
+	padding: 0;
+	width: 90%;
+	margin: auto;
+}
+
+.nav ul li{
+display: inline-table;
+list-style-type: none;
+line-height: 40px;
+margin-right: 0px;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+a.a{
+	
+	padding: 10px 30px;
+	overflow: none;
+	border-radius: 10px;
+	transition: .5s
+}
+a.a:hover{
+	background: #cfcfcf;
+}
+
+ul .mediali > li{
+	display: block;
+	margin: 0px;
+	background: #cfcfcf;
+	padding: 5px 30px 5px 5px;
+	text-align: left;
+	cursor: pointer;
+	transition: .5s;
+}
+
+ul .mediali{
+	display: none;
+}
+
+ul .mediali > li:hover{
+	background: #ababab;
+}
+
+
+header{
+	text-align: center;
+	padding: 25px;
+
+}
+
+
+.quote{
+	padding: 10px;
+	margin: 10px;
+
+}
+a .a:hover{
+	background: #cfcfcf;
+}
+
+
+.quote{
+	padding: 10px;
+	margin: 10px 10px 0 2px;
+	text-align: right;
+	width: 90%;
+}
+
+.col{
+	float: left;
+	width: 45%;
+	padding: 2xp;
+	padding: 25xp;
+	margin: 25px;
+}
+.footer{
+	clear: both;
+
+}
+.facebookbutton{
+	background-color: #ababab;
+	width: 200px;
+	height: 53px;
+	position: absolute;
+	right: -150px;
+	top: 300px;
+	border-radius: 10px;
+	transition-property: width;
+	transition-duration: 1s;
+}
+.facebookbutton:hover{
+	width: 250px;
+}
+img.facebook{
+	height: 50px;
+	width: 50px;
+}
+
+.twitterbutton{
+	background-color: #ababab;
+	width: 200px;
+	height: 53px;
+	position: absolute;
+	right: -150px;
+	top: 360px;
+	border-radius: 10px;
+	transition-property: width;
+	transition-duration: 1s;
+}
+.twitterbutton:hover{
+	width: 250px;
+}
+img.twitter{
+	height: 50px;
+	width: 50px;
+}
+
+.instagrambutton{
+	background-color: #ababab;
+	width: 200px;
+	height: 53px;
+	position: absolute;
+	right: -160px;
+	top: 420px;
+	display: flex;
+	border-radius: 10px;
+	padding: 0 0 0 10px;
+	transition-property: width;
+	transition-duration: 1s;
+}
+.instagrambutton:hover{
+	width: 250px;
+}
+
+img.instagram{
+	height: 30px;
+	width: 30px;
+	align-self: center;
+}
+.menupanels{
+	width: 100%;
+}
+
+
+.menupanels .menu{
+	float: left;
+	margin: 5px;
+	width: 10%;
+	text-align: left;
+}
+.menupanels ul li{
+	list-style-type: none;
+	display: block;
+	padding: 25px;
+	margin: 10px;
+	cursor: pointer;
+	transition: .5s;
+	text-align: left;
+}
+.menupanels ul li.active{
+	background: #cfcfcf;
+}
+.menupanels ul li:hover{
+	background: #ababab;
+}
+.panel{
+	float: left;
+	width: 80%;
+	display: none;
+}
+.videospanel{
+	padding: 10px;
+	width: 100%;
+}
+
+.panel.active{
+	display: block;
+	background: #cfcfcf;
+}
+
+
+.vidcol1 {
+	float: left;
+	width: 31%;
+	display: inline-block;
+	padding: 15px 0px;
+	margin: 10px;
+
+}
+.vidcol2 {
+	float: left;
+	width: 31%;
+	display: inline-block;
+	padding: 15px 0px;
+	margin: 10px;
+
+}
+
+.vidcol3 {
+	float: left;
+	width: 31%;
+	display: inline-block;
+	padding: 15px 0px;
+	margin: 10px;
+}
+
+.photocol1 {
+	float: left;
+	width: 31%;
+	display: inline-block;
+	padding: 15px 0px;
+	margin: 10px;
+}
+
+.photocol2 {
+	float: left;
+	width: 31%;
+	display: inline-block;
+	padding: 15px 0px;
+	margin: 10px;
+}
+
+.photocol3{
+	float: left;
+	width: 31%;
+	display: inline-block;
+	padding: 15px 0px;
+	margin: 10px;
+}
+
+#photospanel img{
+	border: 1px solid gray;
+}
+p{
+	line-height: 25px;
+	padding: 20px;
+}
+
+.arth2{
+	
+}
+
