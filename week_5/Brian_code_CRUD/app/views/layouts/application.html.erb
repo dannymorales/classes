@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HelloWorld</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<header>
+		<h3>Hello <%= current_user.name if current_user %></h3>
+		<nav>
+			<ul>
+				<li><%= link_to 'home', root_path %></li>
+				<li><%= link_to 'awesome', awesome_path %></li>
+				<li><%= link_to 'users', users_path %></li>
+				<% if current_user %>
+					<li><%= link_to 'logout', logout_path, method: :delete %></li>
+				<% else %>
+					<li><%= link_to 'sign up', new_user_path %></li>
+					<li><%= link_to 'login', login_path %></li>
+				<% end %>
+			</ul>
+		</nav>	
+	</header>	
+	<main>
+		<%= flash[:notice] if flash[:notice] %>
+		<%= flash[:alert] if flash[:alert] %>
+	 	<%= yield %>
+	</main>
+</body>
+</html>
